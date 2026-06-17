@@ -1,85 +1,43 @@
-<!-- Login - Playmaker Monitoring -->
 <!doctype html>
-
 <html class="light" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Login - Playmaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playmaker Monitoring</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700;800;900&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <script id="tailwind-config">
+    <script>
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              "tertiary-fixed-dim": "#a8c6ff",
-              "on-tertiary-fixed-variant": "#1a1a1a",
-              "on-secondary": "#1a1a1a",
-              "on-error-container": "#93000a",
-              "surface-container-highest": "#e2ddd4",
-              "secondary-container": "#ffdad6",
-              "on-background": "#1a1a1a",
               background: "#f5f0e8",
-              "secondary-fixed-dim": "#ffb3ab",
-              secondary: "#e63b2e",
-              "on-tertiary-container": "#1a1a1a",
-              "outline-variant": "#d0cbc3",
-              surface: "#f5f0e8",
-              "on-surface-variant": "#4a4a4a",
-              "tertiary-container": "#d6e3ff",
-              "primary-fixed-dim": "#e6b800",
-              tertiary: "#0055ff",
-              "error-container": "#ffdad6",
-              "surface-container-lowest": "#ffffff",
-              "on-primary": "#ffffff",
-              "inverse-primary": "#f5f0e8",
-              outline: "#1a1a1a",
-              "on-tertiary": "#ffffff",
-              "surface-tint": "#1a1a1a",
-              "surface-container": "#eee9e0",
-              "primary-fixed": "#ffcc00",
-              "inverse-surface": "#1a1a1a",
-              "on-secondary-fixed": "#1a1a1a",
-              "on-surface": "#1a1a1a",
-              "on-primary-fixed": "#1a1a1a",
-              "on-primary-container": "#1a1a1a",
-              "on-tertiary-fixed": "#1a1a1a",
-              "on-secondary-container": "#1a1a1a",
-              "tertiary-fixed": "#d6e3ff",
-              "surface-container-high": "#e8e3da",
-              "on-secondary-fixed-variant": "#1a1a1a",
-              "surface-dim": "#d6d1c9",
-              "surface-container-low": "#f2ede5",
-              "surface-bright": "#faf7f2",
-              "secondary-fixed": "#ffdad6",
-              "primary-container": "#ffcc00",
-              "on-error": "#ffffff",
-              "inverse-on-surface": "#f5f0e8",
-              "on-primary-fixed-variant": "#1a1a1a",
-              error: "#cc0000",
               primary: "#1a1a1a",
+              secondary: "#e63b2e",
+              tertiary: "#0055ff",
+              error: "#cc0000",
+              "primary-fixed": "#ffcc00",
+              "primary-fixed-dim": "#e6b800",
+              "secondary-container": "#ffdad6",
+              surface: "#f5f0e8",
+              "surface-container": "#eee9e0",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#e2ddd4",
               "surface-variant": "#e8e3da",
-            },
-            borderRadius: {
-              DEFAULT: "0.125rem",
-              lg: "0.25rem",
-              xl: "0.5rem",
-              full: "0.75rem",
+              "on-surface-variant": "#4a4a4a",
+              outline: "#1a1a1a",
+              "outline-variant": "#d0cbc3",
+              "on-error": "#ffffff",
             },
             fontFamily: {
               headline: ["Space Grotesk", "sans-serif"],
@@ -87,261 +45,6 @@
               body: ["Inter", "sans-serif"],
               label: ["Space Grotesk", "sans-serif"],
             },
-          },
-        },
-      };
-    </script>
-    <style>
-      /* Neo-Brutalist utility classes */
-      .brutal-border {
-        border: 3px solid #1a1a1a;
-      }
-      .brutal-shadow {
-        box-shadow: 6px 6px 0px #1a1a1a;
-      }
-      .brutal-shadow-sm {
-        box-shadow: 4px 4px 0px #1a1a1a;
-      }
-      .brutal-shadow-hover:hover {
-        transform: translate(-2px, -2px);
-        box-shadow: 8px 8px 0px #1a1a1a;
-      }
-      .brutal-shadow-active:active {
-        transform: translate(4px, 4px);
-        box-shadow: 2px 2px 0px #1a1a1a;
-      }
-
-      /* Focus styles for inputs */
-      input:focus {
-        outline: none;
-        border-bottom-color: #0055ff;
-      }
-    </style>
-  </head>
-  <body
-    class="bg-background text-primary font-body min-h-screen flex flex-col justify-center items-center relative overflow-hidden"
-  >
-    <!-- Decorative Geometry Background -->
-    <div
-      class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0 flex justify-center items-center opacity-10"
-    >
-      <div
-        class="w-[800px] h-[800px] border-[10px] border-primary rounded-full absolute -top-[400px] -right-[200px]"
-      ></div>
-      <div
-        class="w-[600px] h-[600px] bg-primary-fixed absolute -bottom-[200px] -left-[100px] rotate-45 brutal-border"
-      ></div>
-      <div
-        class="w-full h-full bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:24px_24px] opacity-20"
-      ></div>
-    </div>
-    <!-- Main Login Card -->
-    <main class="w-full max-w-md mx-auto px-6 z-10 relative">
-      <div
-        class="bg-surface-container-lowest brutal-border brutal-shadow p-8 flex flex-col gap-8"
-      >
-        <!-- Brand / Header -->
-        <div class="flex flex-col items-center text-center gap-2 mb-4">
-          <h1
-            class="font-display font-black text-5xl tracking-tighter text-primary"
-          >
-            PLAYMAKER
-          </h1>
-          <p
-            class="font-headline font-bold text-sm uppercase tracking-widest text-on-surface-variant"
-          >
-            System Access // v1.0
-          </p>
-        </div>
-        <!-- Login Form -->
-        <form action="#" class="flex flex-col gap-6" onsubmit="loginPlaymaker(event)"></form>
-        >
-          <!-- Input Field -->
-          <div class="flex flex-col gap-2 relative group">
-            <label
-              class="font-label uppercase text-xs tracking-tighter text-on-surface-variant group-focus-within:text-tertiary transition-colors"
-              for="magic-link"
-              >Access Token / Magic Link</label
-            >
-            <div class="relative flex items-center">
-              <span
-                class="material-symbols-outlined absolute left-0 text-on-surface-variant group-focus-within:text-tertiary transition-colors pl-2"
-                style="font-variation-settings: &quot;FILL&quot; 1"
-                >key</span
-              >
-              <input
-                class="w-full bg-transparent border-0 border-b-[3px] border-primary text-primary font-body text-lg py-3 pl-10 pr-4 placeholder:text-outline-variant transition-colors rounded-none focus:ring-0 focus:border-tertiary"
-                id="magic-link"
-                name="magic-link"
-                placeholder="Enter secure key..."
-                required=""
-                type="password"
-              />
-            </div>
-          </div>
-          <!-- Actions -->
-          <div class="flex flex-col gap-4 mt-4">
-            <button
-              class="w-full bg-primary-fixed text-primary brutal-border brutal-shadow-sm brutal-shadow-hover brutal-shadow-active py-4 px-6 font-headline font-bold uppercase text-lg tracking-tight transition-all flex justify-center items-center gap-2"
-              type="submit"
-            >
-              <span>ENTER DASHBOARD</span>
-              <span class="material-symbols-outlined font-bold"
-                >arrow_forward</span
-              >
-            </button>
-            <button
-              class="w-full bg-transparent text-primary brutal-border py-3 px-6 font-headline font-bold uppercase text-sm tracking-tight hover:bg-primary hover:text-background transition-colors duration-150"
-              type="button"
-            >
-              Request Access
-            </button>
-          </div>
-        </form>
-        <!-- Footer / Security Note -->
-        <div
-          class="mt-4 pt-6 border-t-[3px] border-primary flex items-start gap-3"
-        >
-          <span
-            class="material-symbols-outlined text-secondary"
-            style="font-variation-settings: &quot;FILL&quot; 1"
-            >shield</span
-          >
-          <p class="font-body text-xs text-on-surface-variant">
-            Unauthorized access to this Playmaker node is strictly prohibited.
-            Connections are monitored and logged.
-          </p>
-        </div>
-      </div>
-      <!-- Bottom Deco -->
-      <div class="mt-8 flex justify-center gap-4">
-        <div class="w-3 h-3 bg-primary brutal-border"></div>
-        <div class="w-3 h-3 bg-secondary brutal-border"></div>
-        <div class="w-3 h-3 bg-tertiary brutal-border"></div>
-      </div>
-    </main>
-    <!-- Footer Component Integration (from JSON) -->
-    <footer
-      class="w-full py-4 px-8 flex justify-between items-center bg-primary dark:bg-surface-container-highest docked full-width bottom-0 border-t-[3px] border-primary absolute bottom-0 z-10"
-    >
-      <div class="font-display font-bold text-primary-fixed">PLAYMAKER</div>
-      <div
-        class="font-label uppercase text-xs tracking-tighter text-background dark:text-on-background"
-      >
-        © 2026 PLAYMAKER MONITORING SYSTEM
-      </div>
-      <div
-        class="flex gap-4 font-label uppercase text-xs tracking-tighter text-background dark:text-on-background"
-      >
-        <a
-          class="text-surface-container-highest hover:text-tertiary-fixed-dim transition-colors"
-          href="#"
-          >Privacy Policy</a
-        >
-        <a
-          class="text-surface-container-highest hover:text-tertiary-fixed-dim transition-colors"
-          href="#"
-          >Terminal Access</a
-        >
-        <a
-          class="text-surface-container-highest hover:text-tertiary-fixed-dim transition-colors"
-          href="#"
-          >Support</a
-        >
-      </div>
-    </footer>
-  </body>
-</html>
-
-<!-- Dashboard Overview - Playmaker -->
-<!doctype html>
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Playmaker Dashboard</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&amp;family=Inter:wght@400;500;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "tertiary-fixed-dim": "#a8c6ff",
-              "on-tertiary-fixed-variant": "#1a1a1a",
-              "on-secondary": "#1a1a1a",
-              "on-error-container": "#93000a",
-              "surface-container-highest": "#e2ddd4",
-              "secondary-container": "#ffdad6",
-              "on-background": "#1a1a1a",
-              background: "#f5f0e8",
-              "secondary-fixed-dim": "#ffb3ab",
-              secondary: "#e63b2e",
-              "on-tertiary-container": "#1a1a1a",
-              "outline-variant": "#d0cbc3",
-              surface: "#f5f0e8",
-              "on-surface-variant": "#4a4a4a",
-              "tertiary-container": "#d6e3ff",
-              "primary-fixed-dim": "#e6b800",
-              tertiary: "#0055ff",
-              "error-container": "#ffdad6",
-              "surface-container-lowest": "#ffffff",
-              "on-primary": "#ffffff",
-              "inverse-primary": "#f5f0e8",
-              outline: "#1a1a1a",
-              "on-tertiary": "#ffffff",
-              "surface-tint": "#1a1a1a",
-              "surface-container": "#eee9e0",
-              "primary-fixed": "#ffcc00",
-              "inverse-surface": "#1a1a1a",
-              "on-secondary-fixed": "#1a1a1a",
-              "on-surface": "#1a1a1a",
-              "on-primary-fixed": "#1a1a1a",
-              "on-primary-container": "#1a1a1a",
-              "on-tertiary-fixed": "#1a1a1a",
-              "on-secondary-container": "#1a1a1a",
-              "tertiary-fixed": "#d6e3ff",
-              "surface-container-high": "#e8e3da",
-              "on-secondary-fixed-variant": "#1a1a1a",
-              "surface-dim": "#d6d1c9",
-              "surface-container-low": "#f2ede5",
-              "surface-bright": "#faf7f2",
-              "secondary-fixed": "#ffdad6",
-              "primary-container": "#ffcc00",
-              "on-error": "#ffffff",
-              "inverse-on-surface": "#f5f0e8",
-              "on-primary-fixed-variant": "#1a1a1a",
-              error: "#cc0000",
-              primary: "#1a1a1a",
-              "surface-variant": "#e8e3da",
-            },
-            borderRadius: {
-              DEFAULT: "0px",
-              lg: "0px",
-              xl: "0px",
-              full: "0px",
-            },
-            spacing: {},
-            fontFamily: {
-              headline: ["Space Grotesk", "sans-serif"],
-              display: ["Space Grotesk", "sans-serif"],
-              body: ["Inter", "sans-serif"],
-              label: ["Space Grotesk", "sans-serif"],
-            },
-            fontSize: {},
             boxShadow: {
               neo: "4px 4px 0px 0px #1a1a1a",
               "neo-hover": "6px 6px 0px 0px #1a1a1a",
@@ -351,942 +54,641 @@
       };
     </script>
     <style>
+      html,
       body {
-        background-color: theme("colors.background");
-        color: theme("colors.primary");
-      }
-      .neo-border {
-        border: 3px solid theme("colors.primary");
-      }
-    </style>
-  </head>
-  <body class="font-body min-h-screen flex flex-col antialiased">
-    <!-- TopNavBar -->
-    <nav
-      class="bg-background dark:bg-primary text-primary dark:text-primary-fixed full-width top-0 border-b-4 border-primary dark:border-primary-fixed flat no shadows"
-    >
-      <div
-        class="flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto"
-      >
-        <!-- Brand -->
-        <div
-          class="text-2xl font-display font-black tracking-tighter text-primary dark:text-primary-fixed uppercase"
-        >
-          PLAYMAKER
-        </div>
-        <!-- Navigation Links -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a
-            class="text-primary dark:text-primary-fixed font-black border-b-4 border-primary dark:border-primary-fixed pb-1 uppercase font-headline tracking-widest text-sm hover:bg-primary hover:text-background dark:hover:bg-primary-fixed dark:hover:text-primary transition-colors duration-100 scale-95 transition-transform duration-75"
-            href="#"
-            >Dashboard</a
-          >
-          <a
-            class="text-on-surface-variant dark:text-outline-variant font-medium uppercase font-headline tracking-widest text-sm hover:bg-primary hover:text-background dark:hover:bg-primary-fixed dark:hover:text-primary transition-colors duration-100 scale-95 transition-transform duration-75"
-            href="#"
-            >Logs</a
-          >
-          <a
-            class="text-on-surface-variant dark:text-outline-variant font-medium uppercase font-headline tracking-widest text-sm hover:bg-primary hover:text-background dark:hover:bg-primary-fixed dark:hover:text-primary transition-colors duration-100 scale-95 transition-transform duration-75"
-            href="#"
-            >System Status</a
-          >
-        </div>
-        <!-- Trailing Icons -->
-        <div class="flex items-center space-x-4">
-          <button
-            class="p-2 neo-border hover:bg-primary hover:text-background transition-colors shadow-neo active:translate-y-1 active:translate-x-1 active:shadow-none"
-          >
-            <span class="material-symbols-outlined block">account_circle</span>
-          </button>
-          <button
-            class="p-2 neo-border hover:bg-primary hover:text-background transition-colors shadow-neo active:translate-y-1 active:translate-x-1 active:shadow-none"
-          >
-            <span class="material-symbols-outlined block">settings</span>
-          </button>
-        </div>
-      </div>
-    </nav>
-    <div class="flex flex-1 overflow-hidden">
-      <!-- SideNavBar -->
-      <aside
-        class="hidden lg:flex flex-col h-full overflow-y-auto bg-background dark:bg-primary text-primary dark:text-primary-fixed fixed left-0 top-0 w-64 border-r-4 border-primary dark:border-primary-fixed flat no shadows z-10 pt-24"
-      >
-        <!-- Header -->
-        <div class="p-6 border-b-4 border-primary">
-          <h2
-            class="font-headline font-black text-xl uppercase tracking-tighter"
-          >
-            PROJECT_ADMIN
-          </h2>
-          <p class="font-body text-sm font-medium mt-1">v1.0 MVP Build</p>
-        </div>
-        <!-- Tabs -->
-        <nav class="flex-1 flex flex-col py-4">
-          <a
-            class="bg-primary dark:bg-primary-fixed text-background dark:text-primary font-black px-4 py-3 flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-tertiary-fixed-dim dark:hover:bg-tertiary transition-all translate-x-1 duration-150 border-y-2 border-primary"
-            href="#"
-          >
-            <span class="material-symbols-outlined">dashboard</span>
-            <span>Overview</span>
-          </a>
-          <a
-            class="text-primary dark:text-outline-variant px-4 py-3 border-b-2 border-primary dark:border-primary-fixed-dim flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-tertiary-fixed-dim dark:hover:bg-tertiary transition-all"
-            href="#"
-          >
-            <span class="material-symbols-outlined">list_alt</span>
-            <span>All Projects</span>
-          </a>
-          <a
-            class="text-primary dark:text-outline-variant px-4 py-3 border-b-2 border-primary dark:border-primary-fixed-dim flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-tertiary-fixed-dim dark:hover:bg-tertiary transition-all"
-            href="#"
-          >
-            <span class="material-symbols-outlined">error</span>
-            <span>Error Logs</span>
-          </a>
-          <a
-            class="text-primary dark:text-outline-variant px-4 py-3 border-b-2 border-primary dark:border-primary-fixed-dim flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-tertiary-fixed-dim dark:hover:bg-tertiary transition-all"
-            href="#"
-          >
-            <span class="material-symbols-outlined">vpn_key</span>
-            <span>API Keys</span>
-          </a>
-        </nav>
-        <!-- Footer Tabs -->
-        <div class="mt-auto border-t-4 border-primary flex flex-col">
-          <a
-            class="text-primary dark:text-outline-variant px-4 py-3 border-b-2 border-primary dark:border-primary-fixed-dim flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-tertiary-fixed-dim dark:hover:bg-tertiary transition-all"
-            href="#"
-          >
-            <span class="material-symbols-outlined">description</span>
-            <span>Documentation</span>
-          </a>
-          <a
-            class="text-primary dark:text-outline-variant px-4 py-3 flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-tertiary-fixed-dim dark:hover:bg-tertiary transition-all hover:bg-secondary hover:text-on-error"
-            href="#"
-          >
-            <span class="material-symbols-outlined">logout</span>
-            <span>Sign Out</span>
-          </a>
-        </div>
-      </aside>
-      <!-- Main Content -->
-      <main class="flex-1 lg:ml-64 p-8 lg:p-12 overflow-y-auto">
-        <!-- Page Header -->
-        <div
-          class="mb-12 flex justify-between items-end border-b-4 border-primary pb-6"
-        >
-          <div>
-            <h1
-              class="font-headline font-black text-5xl md:text-7xl uppercase tracking-tighter leading-none mb-4"
-            >
-              Dashboard<br />Overview
-            </h1>
-            <p class="font-body text-xl font-medium max-w-2xl">
-              Monitoring active Playmaker instances and backend synchronization
-              pipelines.
-            </p>
-          </div>
-          <button
-            class="bg-primary-fixed text-primary px-8 py-4 neo-border font-headline font-bold uppercase tracking-widest text-sm hover:bg-primary hover:text-background transition-colors shadow-neo active:translate-y-1 active:translate-x-1 active:shadow-none whitespace-nowrap"
-          >
-            NEW PROJECT
-          </button>
-        </div>
-        <!-- Stats Ribbon -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div
-            class="bg-surface-container neo-border p-6 shadow-neo flex flex-col justify-between"
-          >
-            <span class="font-label uppercase text-sm tracking-widest mb-4"
-              >Total Projects</span
-            >
-            <span class="font-display font-black text-6xl">24</span>
-          </div>
-          <div
-            class="bg-primary-fixed neo-border p-6 shadow-neo flex flex-col justify-between"
-          >
-            <span class="font-label uppercase text-sm tracking-widest mb-4"
-              >Active &amp; Healthy</span
-            >
-            <span class="font-display font-black text-6xl">18</span>
-          </div>
-          <div
-            class="bg-secondary text-on-error neo-border p-6 shadow-neo flex flex-col justify-between"
-          >
-            <span class="font-label uppercase text-sm tracking-widest mb-4"
-              >Critical Failures</span
-            >
-            <span class="font-display font-black text-6xl">2</span>
-          </div>
-        </div>
-        <!-- Grid Header -->
-        <div class="flex justify-between items-center mb-6">
-          <h3 class="font-headline font-bold text-2xl uppercase tracking-tight">
-            Active Pipelines
-          </h3>
-          <div class="flex space-x-2">
-            <button class="p-2 neo-border bg-primary text-background">
-              <span class="material-symbols-outlined block">grid_view</span>
-            </button>
-            <button
-              class="p-2 neo-border hover:bg-primary hover:text-background transition-colors"
-            >
-              <span class="material-symbols-outlined block">view_list</span>
-            </button>
-          </div>
-        </div>
-        <!-- Project Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          <!-- Card 1: Success -->
-          <div
-            class="bg-surface neo-border shadow-neo hover:shadow-neo-hover transition-shadow p-6 flex flex-col group relative overflow-hidden cursor-pointer"
-          >
-            <div
-              class="absolute top-0 right-0 w-16 h-16 bg-primary-fixed -mr-8 -mt-8 rotate-45 border-l-4 border-b-4 border-primary"
-            ></div>
-            <div class="flex justify-between items-start mb-6 z-10">
-              <div
-                class="bg-background neo-border px-3 py-1 inline-flex items-center space-x-2"
-              >
-                <div
-                  class="w-3 h-3 bg-[#00cc44] border-2 border-primary rounded-full animate-pulse"
-                ></div>
-                <span
-                  class="font-label text-xs uppercase font-bold tracking-widest"
-                  >Running</span
-                >
-              </div>
-              <span class="material-symbols-outlined text-outline-variant"
-                >more_vert</span
-              >
-            </div>
-            <h4
-              class="font-headline font-black text-2xl uppercase tracking-tighter mb-2 z-10"
-            >
-              BI-GSheet-Sync
-            </h4>
-            <p class="font-body text-sm text-on-surface-variant mb-8 z-10">
-              Syncs daily transaction metrics to BI reporting sheets.
-            </p>
-            <div
-              class="mt-auto border-t-2 border-primary pt-4 flex justify-between items-center z-10"
-            >
-              <div class="flex flex-col">
-                <span
-                  class="font-label text-xs uppercase tracking-widest text-on-surface-variant"
-                  >Last Heartbeat</span
-                >
-                <span class="font-body font-bold">2 mins ago</span>
-              </div>
-              <button
-                class="neo-border p-2 group-hover:bg-primary group-hover:text-background transition-colors"
-              >
-                <span class="material-symbols-outlined block text-sm"
-                  >arrow_forward</span
-                >
-              </button>
-            </div>
-          </div>
-          <!-- Card 2: Failed -->
-          <div
-            class="bg-secondary-container neo-border shadow-neo hover:shadow-neo-hover transition-shadow p-6 flex flex-col group relative overflow-hidden cursor-pointer"
-          >
-            <div
-              class="absolute top-0 right-0 w-16 h-16 bg-secondary -mr-8 -mt-8 rotate-45 border-l-4 border-b-4 border-primary"
-            ></div>
-            <div class="flex justify-between items-start mb-6 z-10">
-              <div
-                class="bg-background neo-border px-3 py-1 inline-flex items-center space-x-2"
-              >
-                <div
-                  class="w-3 h-3 bg-secondary border-2 border-primary rounded-full"
-                ></div>
-                <span
-                  class="font-label text-xs uppercase font-bold tracking-widest text-secondary"
-                  >Failed</span
-                >
-              </div>
-              <span class="material-symbols-outlined text-outline-variant"
-                >more_vert</span
-              >
-            </div>
-            <h4
-              class="font-headline font-black text-2xl uppercase tracking-tighter mb-2 z-10"
-            >
-              Payment-Gateway-Hook
-            </h4>
-            <p class="font-body text-sm text-on-surface-variant mb-8 z-10">
-              Listens for incoming stripe webhook events.
-            </p>
-            <div
-              class="mt-auto border-t-2 border-primary pt-4 flex justify-between items-center z-10"
-            >
-              <div class="flex flex-col">
-                <span
-                  class="font-label text-xs uppercase tracking-widest text-on-surface-variant"
-                  >Last Heartbeat</span
-                >
-                <span class="font-body font-bold text-secondary"
-                  >4 hours ago</span
-                >
-              </div>
-              <button
-                class="neo-border p-2 group-hover:bg-primary group-hover:text-background transition-colors"
-              >
-                <span class="material-symbols-outlined block text-sm"
-                  >arrow_forward</span
-                >
-              </button>
-            </div>
-          </div>
-          <!-- Card 3: Stale -->
-          <div
-            class="bg-surface neo-border shadow-neo hover:shadow-neo-hover transition-shadow p-6 flex flex-col group relative overflow-hidden cursor-pointer"
-          >
-            <div
-              class="absolute top-0 right-0 w-16 h-16 bg-primary-fixed-dim -mr-8 -mt-8 rotate-45 border-l-4 border-b-4 border-primary"
-            ></div>
-            <div class="flex justify-between items-start mb-6 z-10">
-              <div
-                class="bg-background neo-border px-3 py-1 inline-flex items-center space-x-2"
-              >
-                <div
-                  class="w-3 h-3 bg-primary-fixed-dim border-2 border-primary rounded-full"
-                ></div>
-                <span
-                  class="font-label text-xs uppercase font-bold tracking-widest"
-                  >Stale</span
-                >
-              </div>
-              <span class="material-symbols-outlined text-outline-variant"
-                >more_vert</span
-              >
-            </div>
-            <h4
-              class="font-headline font-black text-2xl uppercase tracking-tighter mb-2 z-10"
-            >
-              User-Archiver-Job
-            </h4>
-            <p class="font-body text-sm text-on-surface-variant mb-8 z-10">
-              Weekly cron job to archive inactive user data.
-            </p>
-            <div
-              class="mt-auto border-t-2 border-primary pt-4 flex justify-between items-center z-10"
-            >
-              <div class="flex flex-col">
-                <span
-                  class="font-label text-xs uppercase tracking-widest text-on-surface-variant"
-                  >Last Heartbeat</span
-                >
-                <span class="font-body font-bold">5 days ago</span>
-              </div>
-              <button
-                class="neo-border p-2 group-hover:bg-primary group-hover:text-background transition-colors"
-              >
-                <span class="material-symbols-outlined block text-sm"
-                  >arrow_forward</span
-                >
-              </button>
-            </div>
-          </div>
-          <!-- Card 4: Success -->
-          <div
-            class="bg-surface neo-border shadow-neo hover:shadow-neo-hover transition-shadow p-6 flex flex-col group relative overflow-hidden cursor-pointer"
-          >
-            <div
-              class="absolute top-0 right-0 w-16 h-16 bg-primary-fixed -mr-8 -mt-8 rotate-45 border-l-4 border-b-4 border-primary"
-            ></div>
-            <div class="flex justify-between items-start mb-6 z-10">
-              <div
-                class="bg-background neo-border px-3 py-1 inline-flex items-center space-x-2"
-              >
-                <div
-                  class="w-3 h-3 bg-[#00cc44] border-2 border-primary rounded-full animate-pulse"
-                ></div>
-                <span
-                  class="font-label text-xs uppercase font-bold tracking-widest"
-                  >Running</span
-                >
-              </div>
-              <span class="material-symbols-outlined text-outline-variant"
-                >more_vert</span
-              >
-            </div>
-            <h4
-              class="font-headline font-black text-2xl uppercase tracking-tighter mb-2 z-10"
-            >
-              Elastic-Search-Indexer
-            </h4>
-            <p class="font-body text-sm text-on-surface-variant mb-8 z-10">
-              Keeps search indices updated with main DB.
-            </p>
-            <div
-              class="mt-auto border-t-2 border-primary pt-4 flex justify-between items-center z-10"
-            >
-              <div class="flex flex-col">
-                <span
-                  class="font-label text-xs uppercase tracking-widest text-on-surface-variant"
-                  >Last Heartbeat</span
-                >
-                <span class="font-body font-bold">12 secs ago</span>
-              </div>
-              <button
-                class="neo-border p-2 group-hover:bg-primary group-hover:text-background transition-colors"
-              >
-                <span class="material-symbols-outlined block text-sm"
-                  >arrow_forward</span
-                >
-              </button>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-    <!-- Footer -->
-    <footer
-      class="bg-primary dark:bg-surface-container-highest text-background dark:text-on-background font-label uppercase text-xs tracking-tighter docked full-width bottom-0 border-t-4 border-primary flat no shadows lg:ml-64 z-20"
-    >
-      <div class="w-full py-4 px-8 flex justify-between items-center">
-        <span class="font-display font-bold text-primary-fixed"
-          >© 2026 PLAYMAKER MONITORING SYSTEM</span
-        >
-        <div class="flex space-x-6">
-          <a
-            class="text-surface-container-highest hover:text-tertiary-fixed-dim"
-            href="#"
-            >Privacy Policy</a
-          >
-          <a
-            class="text-surface-container-highest hover:text-tertiary-fixed-dim"
-            href="#"
-            >Terminal Access</a
-          >
-          <a
-            class="text-surface-container-highest hover:text-tertiary-fixed-dim"
-            href="#"
-            >Support</a
-          >
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
-
-<!-- Log History - Playmaker -->
-<!doctype html>
-
-<html class="light" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>PLAYMAKER - Log History</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "tertiary-fixed-dim": "#a8c6ff",
-              "on-tertiary-fixed-variant": "#1a1a1a",
-              "on-secondary": "#1a1a1a",
-              "on-error-container": "#93000a",
-              "surface-container-highest": "#e2ddd4",
-              "secondary-container": "#ffdad6",
-              "on-background": "#1a1a1a",
-              background: "#f5f0e8",
-              "secondary-fixed-dim": "#ffb3ab",
-              secondary: "#e63b2e",
-              "on-tertiary-container": "#1a1a1a",
-              "outline-variant": "#d0cbc3",
-              surface: "#f5f0e8",
-              "on-surface-variant": "#4a4a4a",
-              "tertiary-container": "#d6e3ff",
-              "primary-fixed-dim": "#e6b800",
-              tertiary: "#0055ff",
-              "error-container": "#ffdad6",
-              "surface-container-lowest": "#ffffff",
-              "on-primary": "#ffffff",
-              "inverse-primary": "#f5f0e8",
-              outline: "#1a1a1a",
-              "on-tertiary": "#ffffff",
-              "surface-tint": "#1a1a1a",
-              "surface-container": "#eee9e0",
-              "primary-fixed": "#ffcc00",
-              "inverse-surface": "#1a1a1a",
-              "on-secondary-fixed": "#1a1a1a",
-              "on-surface": "#1a1a1a",
-              "on-primary-fixed": "#1a1a1a",
-              "on-primary-container": "#1a1a1a",
-              "on-tertiary-fixed": "#1a1a1a",
-              "on-secondary-container": "#1a1a1a",
-              "tertiary-fixed": "#d6e3ff",
-              "surface-container-high": "#e8e3da",
-              "on-secondary-fixed-variant": "#1a1a1a",
-              "surface-dim": "#d6d1c9",
-              "surface-container-low": "#f2ede5",
-              "surface-bright": "#faf7f2",
-              "secondary-fixed": "#ffdad6",
-              "primary-container": "#ffcc00",
-              "on-error": "#ffffff",
-              "inverse-on-surface": "#f5f0e8",
-              "on-primary-fixed-variant": "#1a1a1a",
-              error: "#cc0000",
-              primary: "#1a1a1a",
-              "surface-variant": "#e8e3da",
-            },
-            borderRadius: {
-              DEFAULT: "0",
-              lg: "0",
-              xl: "0",
-              full: "0",
-            },
-            spacing: {},
-            fontFamily: {
-              headline: ["Space Grotesk"],
-              display: ["Space Grotesk"],
-              body: ["Inter"],
-              label: ["Space Grotesk"],
-            },
-            fontSize: {},
-          },
-        },
-      };
-    </script>
-    <style>
-      .neo-shadow {
-        box-shadow: 4px 4px 0px 0px #1a1a1a;
-      }
-      .neo-shadow-lg {
-        box-shadow: 8px 8px 0px 0px #1a1a1a;
+        min-height: 100%;
+        background: #f5f0e8;
+        color: #1a1a1a;
       }
       .neo-border {
         border: 3px solid #1a1a1a;
       }
+      .neo-shadow {
+        box-shadow: 4px 4px 0 #1a1a1a;
+      }
+      .neo-shadow-lg {
+        box-shadow: 8px 8px 0 #1a1a1a;
+      }
+      .brutal-border {
+        border: 3px solid #1a1a1a;
+      }
+      .brutal-shadow {
+        box-shadow: 6px 6px 0 #1a1a1a;
+      }
+      .brutal-shadow-sm {
+        box-shadow: 4px 4px 0 #1a1a1a;
+      }
+      .brutal-shadow-hover:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 8px 8px 0 #1a1a1a;
+      }
+      .brutal-shadow-active:active {
+        transform: translate(4px, 4px);
+        box-shadow: 2px 2px 0 #1a1a1a;
+      }
+      .page {
+        display: none;
+      }
+      .page.active {
+        display: block;
+      }
+      .auth-only {
+        display: none;
+      }
+      .is-auth .auth-only {
+        display: flex;
+      }
+      .is-auth #page-login {
+        display: none !important;
+      }
+      input:focus {
+        outline: none;
+        border-bottom-color: #0055ff;
+      }
+      .status-dot {
+        width: 0.75rem;
+        height: 0.75rem;
+        border: 2px solid #1a1a1a;
+        border-radius: 999px;
+      }
+      @media (max-width: 1023px) {
+        .sidebar-pad {
+          margin-left: 0 !important;
+        }
+        .app-shell {
+          padding-bottom: 70px;
+        }
+      }
     </style>
   </head>
-  <body
-    class="bg-background text-primary font-body antialiased flex flex-col min-h-screen"
-  >
-    <!-- TopNavBar -->
-    <header
-      class="w-full bg-background dark:bg-primary docked full-width top-0 border-b-4 border-primary dark:border-primary-fixed"
+  <body class="font-body min-h-screen antialiased">
+    <section
+      id="page-login"
+      class="page active min-h-screen flex flex-col justify-center items-center relative overflow-hidden px-6"
     >
       <div
-        class="flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto"
+        class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0 flex justify-center items-center opacity-10"
       >
-        <div class="flex items-center gap-8">
-          <span
-            class="text-2xl font-display font-black tracking-tighter text-primary dark:text-primary-fixed uppercase"
-            >PLAYMAKER</span
-          >
-          <nav class="hidden md:flex items-center gap-6">
-            <a
-              class="text-on-surface-variant dark:text-outline-variant font-medium hover:bg-primary hover:text-background dark:hover:bg-primary-fixed dark:hover:text-primary transition-colors duration-100 px-3 py-2 scale-95 transition-transform duration-75"
-              href="#"
-              >Dashboard</a
-            >
-            <a
-              class="text-primary dark:text-primary-fixed font-black border-b-4 border-primary dark:border-primary-fixed pb-1 px-3 py-2 scale-95 transition-transform duration-75"
-              href="#"
-              >Logs</a
-            >
-            <a
-              class="text-on-surface-variant dark:text-outline-variant font-medium hover:bg-primary hover:text-background dark:hover:bg-primary-fixed dark:hover:text-primary transition-colors duration-100 px-3 py-2 scale-95 transition-transform duration-75"
-              href="#"
-              >System Status</a
-            >
-          </nav>
-        </div>
         <div
-          class="flex items-center gap-4 text-primary dark:text-primary-fixed"
-        >
-          <button
-            class="hover:bg-primary hover:text-background dark:hover:bg-primary-fixed dark:hover:text-primary transition-colors duration-100 p-2 scale-95 transition-transform duration-75"
-          >
-            <span class="material-symbols-outlined" data-icon="account_circle"
-              >account_circle</span
-            >
-          </button>
-          <button
-            class="hover:bg-primary hover:text-background dark:hover:bg-primary-fixed dark:hover:text-primary transition-colors duration-100 p-2 scale-95 transition-transform duration-75"
-          >
-            <span class="material-symbols-outlined" data-icon="settings"
-              >settings</span
-            >
-          </button>
-        </div>
+          class="w-[800px] h-[800px] border-[10px] border-primary rounded-full absolute -top-[400px] -right-[200px]"
+        ></div>
+        <div
+          class="w-[600px] h-[600px] bg-primary-fixed absolute -bottom-[200px] -left-[100px] rotate-45 brutal-border"
+        ></div>
+        <div
+          class="w-full h-full bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:24px_24px] opacity-20"
+        ></div>
       </div>
-    </header>
-    <div class="flex flex-1 overflow-hidden">
-      <!-- SideNavBar -->
-      <aside
-        class="hidden lg:flex flex-col h-full overflow-y-auto bg-background dark:bg-primary fixed left-0 top-0 w-64 border-r-4 border-primary dark:border-primary-fixed z-10 pt-20"
-      >
-        <div class="p-6 border-b-4 border-primary">
-          <h2
-            class="font-display font-black text-primary dark:text-primary-fixed uppercase text-2xl mb-1"
-          >
-            PROJECT_ADMIN
-          </h2>
-          <p class="font-label tracking-widest text-xs font-bold">
-            v1.0 MVP Build
-          </p>
-          <p class="text-sm mt-2 font-medium">Developer Admin</p>
-        </div>
-        <nav class="flex flex-col flex-1">
-          <a
-            class="text-primary dark:text-outline-variant px-4 py-3 border-b-2 border-primary dark:border-primary-fixed-dim hover:bg-tertiary-fixed-dim dark:hover:bg-tertiary transition-all flex items-center gap-3 font-label tracking-widest uppercase"
-            href="#"
-          >
-            <span class="material-symbols-outlined" data-icon="dashboard"
-              >dashboard</span
+      <main class="w-full max-w-md mx-auto z-10 relative">
+        <div
+          class="bg-surface-container-lowest brutal-border brutal-shadow p-8 flex flex-col gap-8"
+        >
+          <div class="flex flex-col items-center text-center gap-2 mb-4">
+            <h1 class="font-display font-black text-5xl tracking-tighter">
+              PLAYMAKER
+            </h1>
+            <p
+              class="font-headline font-bold text-sm uppercase tracking-widest text-on-surface-variant"
             >
-            Overview
-          </a>
-          <a
-            class="text-primary dark:text-outline-variant px-4 py-3 border-b-2 border-primary dark:border-primary-fixed-dim hover:bg-tertiary-fixed-dim dark:hover:bg-tertiary transition-all flex items-center gap-3 font-label tracking-widest uppercase"
-            href="#"
-          >
-            <span class="material-symbols-outlined" data-icon="list_alt"
-              >list_alt</span
-            >
-            All Projects
-          </a>
-          <a
-            class="bg-primary dark:bg-primary-fixed text-background dark:text-primary font-black px-4 py-3 flex items-center gap-3 font-label tracking-widest uppercase translate-x-1 duration-150"
-            href="#"
-          >
-            <span class="material-symbols-outlined" data-icon="error"
-              >error</span
-            >
-            Error Logs
-          </a>
-          <a
-            class="text-primary dark:text-outline-variant px-4 py-3 border-b-2 border-primary dark:border-primary-fixed-dim hover:bg-tertiary-fixed-dim dark:hover:bg-tertiary transition-all flex items-center gap-3 font-label tracking-widest uppercase"
-            href="#"
-          >
-            <span class="material-symbols-outlined" data-icon="vpn_key"
-              >vpn_key</span
-            >
-            API Keys
-          </a>
-        </nav>
-        <div class="mt-auto border-t-4 border-primary">
-          <a
-            class="text-primary dark:text-outline-variant px-4 py-3 border-b-2 border-primary dark:border-primary-fixed-dim hover:bg-tertiary-fixed-dim dark:hover:bg-tertiary transition-all flex items-center gap-3 font-label tracking-widest uppercase"
-            href="#"
-          >
-            <span class="material-symbols-outlined" data-icon="description"
-              >description</span
-            >
-            Documentation
-          </a>
-          <a
-            class="text-primary dark:text-outline-variant px-4 py-3 hover:bg-tertiary-fixed-dim dark:hover:bg-tertiary transition-all flex items-center gap-3 font-label tracking-widest uppercase"
-            href="#"
-          >
-            <span class="material-symbols-outlined" data-icon="logout"
-              >logout</span
-            >
-            Sign Out
-          </a>
-        </div>
-      </aside>
-      <!-- Main Content -->
-      <main class="flex-1 lg:ml-64 p-8 overflow-y-auto">
-        <div class="max-w-7xl mx-auto">
-          <header
-            class="mb-12 flex justify-between items-end border-b-4 border-primary pb-4"
-          >
-            <div>
-              <h1
-                class="font-headline font-bold text-6xl uppercase tracking-tighter text-primary"
+              System Access // v1.0
+            </p>
+          </div>
+          <form id="login-form" class="flex flex-col gap-6">
+            <div class="flex flex-col gap-2 relative group">
+              <label
+                class="font-label uppercase text-xs tracking-tighter text-on-surface-variant group-focus-within:text-tertiary transition-colors"
+                for="magic-link"
+                >Access Token / Magic Link</label
               >
-                Log History
-              </h1>
-              <p class="font-body tracking-tight text-lg mt-2 max-w-2xl">
-                Chronological execution logs for all active projects.
-                High-fidelity raw data output.
+              <div class="relative flex items-center">
+                <span
+                  class="material-symbols-outlined absolute left-0 text-on-surface-variant group-focus-within:text-tertiary transition-colors pl-2"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >key</span
+                >
+                <input
+                  class="w-full bg-transparent border-0 border-b-[3px] border-primary text-primary font-body text-lg py-3 pl-10 pr-4 placeholder:text-outline-variant transition-colors rounded-none focus:ring-0 focus:border-tertiary"
+                  id="magic-link"
+                  name="magic-link"
+                  placeholder="Enter secure key..."
+                  required
+                  type="password"
+                  autocomplete="current-password"
+                />
+              </div>
+              <p
+                id="login-error"
+                class="hidden text-secondary font-bold text-xs uppercase mt-2"
+              >
+                Access denied. Token salah.
               </p>
             </div>
-            <div class="flex gap-4">
+            <div class="flex flex-col gap-4 mt-4">
               <button
+                class="w-full bg-primary-fixed text-primary brutal-border brutal-shadow-sm brutal-shadow-hover brutal-shadow-active py-4 px-6 font-headline font-bold uppercase text-lg tracking-tight transition-all flex justify-center items-center gap-2"
+                type="submit"
+              >
+                <span>ENTER DASHBOARD</span
+                ><span class="material-symbols-outlined font-bold"
+                  >arrow_forward</span
+                >
+              </button>
+              <button
+                class="w-full bg-transparent text-primary brutal-border py-3 px-6 font-headline font-bold uppercase text-sm tracking-tight hover:bg-primary hover:text-background transition-colors duration-150"
+                type="button"
+                onclick="alert('Hubungi admin Playmaker untuk token akses.')"
+              >
+                Request Access
+              </button>
+            </div>
+          </form>
+          <div
+            class="mt-4 pt-6 border-t-[3px] border-primary flex items-start gap-3"
+          >
+            <span
+              class="material-symbols-outlined text-secondary"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >shield</span
+            >
+            <p class="font-body text-xs text-on-surface-variant">
+              Unauthorized access to this Playmaker node is strictly prohibited.
+              Connections are monitored and logged.
+            </p>
+          </div>
+        </div>
+        <div class="mt-8 flex justify-center gap-4">
+          <div class="w-3 h-3 bg-primary brutal-border"></div>
+          <div class="w-3 h-3 bg-secondary brutal-border"></div>
+          <div class="w-3 h-3 bg-tertiary brutal-border"></div>
+        </div>
+      </main>
+      <footer
+        class="w-full py-4 px-8 flex justify-between items-center bg-primary border-t-[3px] border-primary absolute bottom-0 z-10 text-xs uppercase font-label tracking-tighter text-background"
+      >
+        <div class="font-display font-bold text-primary-fixed">PLAYMAKER</div>
+        <div>© 2026 PLAYMAKER MONITORING SYSTEM</div>
+        <div class="hidden md:flex gap-4">
+          <a href="#">Privacy Policy</a><a href="#">Terminal Access</a
+          ><a href="#">Support</a>
+        </div>
+      </footer>
+    </section>
+
+    <div id="app" class="hidden min-h-screen flex flex-col app-shell">
+      <nav
+        class="bg-background text-primary border-b-4 border-primary sticky top-0 z-30"
+      >
+        <div
+          class="flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto"
+        >
+          <div
+            class="text-2xl font-display font-black tracking-tighter uppercase cursor-pointer"
+            onclick="showPage('dashboard')"
+          >
+            PLAYMAKER
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <button
+              data-nav="dashboard"
+              onclick="showPage('dashboard')"
+              class="nav-btn font-black border-b-4 border-primary pb-1 uppercase font-headline tracking-widest text-sm"
+            >
+              Dashboard
+            </button>
+            <button
+              data-nav="logs"
+              onclick="showPage('logs')"
+              class="nav-btn text-on-surface-variant font-medium uppercase font-headline tracking-widest text-sm hover:bg-primary hover:text-background px-2 py-1"
+            >
+              Logs
+            </button>
+            <button
+              onclick="alert('System Status belum disambung backend')"
+              class="text-on-surface-variant font-medium uppercase font-headline tracking-widest text-sm hover:bg-primary hover:text-background px-2 py-1"
+            >
+              System Status
+            </button>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button
+              class="p-2 neo-border hover:bg-primary hover:text-background transition-colors shadow-neo active:translate-y-1 active:translate-x-1 active:shadow-none"
+            >
+              <span class="material-symbols-outlined block"
+                >account_circle</span
+              >
+            </button>
+            <button
+              onclick="logoutPlaymaker()"
+              class="p-2 neo-border hover:bg-secondary hover:text-background transition-colors shadow-neo active:translate-y-1 active:translate-x-1 active:shadow-none"
+            >
+              <span class="material-symbols-outlined block">logout</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="flex flex-1 overflow-hidden">
+        <aside
+          class="hidden lg:flex flex-col h-[calc(100vh-76px)] overflow-y-auto bg-background text-primary fixed left-0 top-[76px] w-64 border-r-4 border-primary z-20"
+        >
+          <div class="p-6 border-b-4 border-primary">
+            <h2
+              class="font-headline font-black text-xl uppercase tracking-tighter"
+            >
+              PROJECT_ADMIN
+            </h2>
+            <p class="font-body text-sm font-medium mt-1">v1.0 MVP Build</p>
+          </div>
+          <nav class="flex-1 flex flex-col py-4">
+            <button
+              onclick="showPage('dashboard')"
+              class="text-left side-dashboard bg-primary text-background font-black px-4 py-3 flex items-center space-x-3 uppercase font-label tracking-widest text-sm border-y-2 border-primary"
+            >
+              <span class="material-symbols-outlined">dashboard</span
+              ><span>Overview</span>
+            </button>
+            <button
+              onclick="showPage('logs')"
+              class="text-left side-logs text-primary px-4 py-3 border-b-2 border-primary flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-primary-fixed"
+            >
+              <span class="material-symbols-outlined">error</span
+              ><span>Error Logs</span>
+            </button>
+            <button
+              onclick="alert('API Keys nanti kita sambung backend')"
+              class="text-left text-primary px-4 py-3 border-b-2 border-primary flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-primary-fixed"
+            >
+              <span class="material-symbols-outlined">vpn_key</span
+              ><span>API Keys</span>
+            </button>
+          </nav>
+          <div class="mt-auto border-t-4 border-primary flex flex-col">
+            <button
+              onclick="alert('Documentation belum dibuat')"
+              class="text-left text-primary px-4 py-3 border-b-2 border-primary flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-primary-fixed"
+            >
+              <span class="material-symbols-outlined">description</span
+              ><span>Documentation</span>
+            </button>
+            <button
+              onclick="logoutPlaymaker()"
+              class="text-left text-primary px-4 py-3 flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-secondary hover:text-on-error"
+            >
+              <span class="material-symbols-outlined">logout</span
+              ><span>Sign Out</span>
+            </button>
+          </div>
+        </aside>
+
+        <main class="flex-1 lg:ml-64 p-8 lg:p-12 overflow-y-auto sidebar-pad">
+          <section id="page-dashboard" class="page active">
+            <div
+              class="mb-12 flex flex-col md:flex-row md:justify-between md:items-end gap-6 border-b-4 border-primary pb-6"
+            >
+              <div>
+                <h1
+                  class="font-headline font-black text-5xl md:text-7xl uppercase tracking-tighter leading-none mb-4"
+                >
+                  Dashboard<br />Overview
+                </h1>
+                <p class="font-body text-xl font-medium max-w-2xl">
+                  Monitoring active Playmaker instances and backend
+                  synchronization pipelines.
+                </p>
+              </div>
+              <button
+                class="bg-primary-fixed text-primary px-8 py-4 neo-border font-headline font-bold uppercase tracking-widest text-sm hover:bg-primary hover:text-background transition-colors shadow-neo active:translate-y-1 active:translate-x-1 active:shadow-none whitespace-nowrap"
+              >
+                NEW PROJECT
+              </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <div
+                class="bg-surface-container neo-border p-6 shadow-neo flex flex-col justify-between"
+              >
+                <span class="font-label uppercase text-sm tracking-widest mb-4"
+                  >Total Projects</span
+                ><span
+                  id="total-projects"
+                  class="font-display font-black text-6xl"
+                  >4</span
+                >
+              </div>
+              <div
+                class="bg-primary-fixed neo-border p-6 shadow-neo flex flex-col justify-between"
+              >
+                <span class="font-label uppercase text-sm tracking-widest mb-4"
+                  >Active & Healthy</span
+                ><span
+                  id="healthy-projects"
+                  class="font-display font-black text-6xl"
+                  >2</span
+                >
+              </div>
+              <div
+                class="bg-secondary text-on-error neo-border p-6 shadow-neo flex flex-col justify-between"
+              >
+                <span class="font-label uppercase text-sm tracking-widest mb-4"
+                  >Critical Failures</span
+                ><span
+                  id="failed-projects"
+                  class="font-display font-black text-6xl"
+                  >1</span
+                >
+              </div>
+            </div>
+            <div class="flex justify-between items-center mb-6">
+              <h3
+                class="font-headline font-bold text-2xl uppercase tracking-tight"
+              >
+                Active Pipelines
+              </h3>
+              <button
+                onclick="renderDashboard()"
+                class="p-2 neo-border bg-primary text-background"
+              >
+                <span class="material-symbols-outlined block">refresh</span>
+              </button>
+            </div>
+            <div
+              id="project-grid"
+              class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+            ></div>
+          </section>
+
+          <section id="page-logs" class="page">
+            <header
+              class="mb-12 flex flex-col md:flex-row md:justify-between md:items-end gap-6 border-b-4 border-primary pb-4"
+            >
+              <div>
+                <h1
+                  class="font-headline font-bold text-6xl uppercase tracking-tighter text-primary"
+                >
+                  Log History
+                </h1>
+                <p class="font-body tracking-tight text-lg mt-2 max-w-2xl">
+                  Chronological execution logs for all active projects.
+                  High-fidelity raw data output.
+                </p>
+              </div>
+              <button
+                onclick="exportLogsCsv()"
                 class="bg-primary-fixed text-primary neo-border neo-shadow font-headline font-bold uppercase px-6 py-3 hover:bg-primary hover:text-primary-fixed transition-colors"
               >
                 Export CSV
               </button>
-            </div>
-          </header>
-          <!-- Filters -->
-          <div class="flex gap-4 mb-8">
-            <div class="flex-1">
+            </header>
+            <div class="flex flex-col md:flex-row gap-4 mb-8">
               <input
-                class="w-full bg-transparent border-0 border-b-4 border-primary focus:ring-0 focus:border-tertiary font-headline uppercase text-xl placeholder:text-on-surface-variant p-2"
+                id="log-search"
+                oninput="renderLogs()"
+                class="flex-1 bg-transparent border-0 border-b-4 border-primary focus:ring-0 focus:border-tertiary font-headline uppercase text-xl placeholder:text-on-surface-variant p-2"
                 placeholder="SEARCH LOGS..."
                 type="text"
               />
+              <select
+                id="log-status"
+                onchange="renderLogs()"
+                class="bg-transparent border-0 border-b-4 border-primary focus:ring-0 focus:border-tertiary font-headline uppercase text-xl p-2 cursor-pointer"
+              >
+                <option>ALL STATUS</option>
+                <option>SUCCESS</option>
+                <option>FAILED</option>
+                <option>WARNING</option>
+              </select>
             </div>
-            <select
-              class="bg-transparent border-0 border-b-4 border-primary focus:ring-0 focus:border-tertiary font-headline uppercase text-xl p-2 cursor-pointer"
-            >
-              <option>ALL STATUS</option>
-              <option>SUCCESS</option>
-              <option>FAILED</option>
-            </select>
-          </div>
-          <!-- Table Container -->
-          <div
-            class="bg-surface-container-lowest neo-border neo-shadow-lg overflow-x-auto"
-          >
-            <table class="w-full text-left border-collapse">
-              <thead>
-                <tr
-                  class="bg-primary text-background font-headline uppercase text-xl border-b-4 border-primary"
-                >
-                  <th class="p-4 whitespace-nowrap">Timestamp</th>
-                  <th class="p-4 border-l-4 border-background">Project Name</th>
-                  <th class="p-4 border-l-4 border-background">Status</th>
-                  <th class="p-4 border-l-4 border-background w-1/2">
-                    Message
-                  </th>
-                  <th class="p-4 border-l-4 border-background text-center">
-                    Action
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="font-body text-base">
-                <tr
-                  class="border-b-4 border-primary hover:bg-primary-fixed transition-colors group cursor-pointer"
-                >
-                  <td class="p-4 font-mono font-bold">2026-05-12 14:32:01</td>
-                  <td
-                    class="p-4 border-l-4 border-primary font-headline uppercase font-bold"
-                  >
-                    Alpha Core
-                  </td>
-                  <td class="p-4 border-l-4 border-primary">
-                    <span
-                      class="bg-background text-primary border-2 border-primary px-2 py-1 font-headline uppercase text-xs font-bold inline-block"
-                      >Success</span
-                    >
-                  </td>
-                  <td class="p-4 border-l-4 border-primary truncate max-w-xs">
-                    Authentication sequence completed successfully for user
-                    session...
-                  </td>
-                  <td class="p-4 border-l-4 border-primary text-center">
-                    <button class="text-primary hover:text-tertiary">
-                      <span
-                        class="material-symbols-outlined"
-                        data-icon="open_in_new"
-                        >open_in_new</span
-                      >
-                    </button>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b-4 border-primary hover:bg-secondary hover:text-background transition-colors group cursor-pointer"
-                >
-                  <td class="p-4 font-mono font-bold">2026-05-12 14:31:45</td>
-                  <td
-                    class="p-4 border-l-4 border-primary group-hover:border-background font-headline uppercase font-bold"
-                  >
-                    Beta Pipeline
-                  </td>
-                  <td
-                    class="p-4 border-l-4 border-primary group-hover:border-background"
-                  >
-                    <span
-                      class="bg-secondary text-background border-2 border-background px-2 py-1 font-headline uppercase text-xs font-bold inline-block group-hover:bg-background group-hover:text-secondary group-hover:border-background"
-                      >Failed</span
-                    >
-                  </td>
-                  <td
-                    class="p-4 border-l-4 border-primary group-hover:border-background truncate max-w-xs"
-                  >
-                    Connection timeout at endpoint /api/v2/data. Retrying
-                    (3/3)...
-                  </td>
-                  <td
-                    class="p-4 border-l-4 border-primary group-hover:border-background text-center"
-                  >
-                    <button class="group-hover:text-background">
-                      <span
-                        class="material-symbols-outlined"
-                        data-icon="open_in_new"
-                        >open_in_new</span
-                      >
-                    </button>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b-4 border-primary hover:bg-primary-fixed transition-colors group cursor-pointer"
-                >
-                  <td class="p-4 font-mono font-bold">2026-05-12 14:28:11</td>
-                  <td
-                    class="p-4 border-l-4 border-primary font-headline uppercase font-bold"
-                  >
-                    Delta Sync
-                  </td>
-                  <td class="p-4 border-l-4 border-primary">
-                    <span
-                      class="bg-background text-primary border-2 border-primary px-2 py-1 font-headline uppercase text-xs font-bold inline-block"
-                      >Success</span
-                    >
-                  </td>
-                  <td class="p-4 border-l-4 border-primary truncate max-w-xs">
-                    Data synchronization completed. 4,201 records updated in
-                    database...
-                  </td>
-                  <td class="p-4 border-l-4 border-primary text-center">
-                    <button class="text-primary hover:text-tertiary">
-                      <span
-                        class="material-symbols-outlined"
-                        data-icon="open_in_new"
-                        >open_in_new</span
-                      >
-                    </button>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b-4 border-primary hover:bg-primary-fixed transition-colors group cursor-pointer"
-                >
-                  <td class="p-4 font-mono font-bold">2026-05-12 14:15:00</td>
-                  <td
-                    class="p-4 border-l-4 border-primary font-headline uppercase font-bold"
-                  >
-                    Alpha Core
-                  </td>
-                  <td class="p-4 border-l-4 border-primary">
-                    <span
-                      class="bg-background text-primary border-2 border-primary px-2 py-1 font-headline uppercase text-xs font-bold inline-block"
-                      >Success</span
-                    >
-                  </td>
-                  <td class="p-4 border-l-4 border-primary truncate max-w-xs">
-                    Scheduled maintenance routine started. Services running
-                    nominally...
-                  </td>
-                  <td class="p-4 border-l-4 border-primary text-center">
-                    <button class="text-primary hover:text-tertiary">
-                      <span
-                        class="material-symbols-outlined"
-                        data-icon="open_in_new"
-                        >open_in_new</span
-                      >
-                    </button>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b-4 border-primary hover:bg-secondary hover:text-background transition-colors group cursor-pointer"
-                >
-                  <td class="p-4 font-mono font-bold">2026-05-12 13:59:22</td>
-                  <td
-                    class="p-4 border-l-4 border-primary group-hover:border-background font-headline uppercase font-bold"
-                  >
-                    Gamma Auth
-                  </td>
-                  <td
-                    class="p-4 border-l-4 border-primary group-hover:border-background"
-                  >
-                    <span
-                      class="bg-secondary text-background border-2 border-background px-2 py-1 font-headline uppercase text-xs font-bold inline-block group-hover:bg-background group-hover:text-secondary group-hover:border-background"
-                      >Failed</span
-                    >
-                  </td>
-                  <td
-                    class="p-4 border-l-4 border-primary group-hover:border-background truncate max-w-xs"
-                  >
-                    Invalid token signature detected from IP 192.168.1.105.
-                    Request blocked...
-                  </td>
-                  <td
-                    class="p-4 border-l-4 border-primary group-hover:border-background text-center"
-                  >
-                    <button class="group-hover:text-background">
-                      <span
-                        class="material-symbols-outlined"
-                        data-icon="open_in_new"
-                        >open_in_new</span
-                      >
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- Pagination -->
             <div
-              class="bg-surface p-4 flex justify-between items-center border-t-4 border-primary font-headline uppercase font-bold"
+              class="bg-surface-container-lowest neo-border neo-shadow-lg overflow-x-auto"
             >
-              <span>Showing 1-5 of 1,248</span>
-              <div class="flex gap-2">
-                <button
-                  class="bg-background border-2 border-primary p-2 hover:bg-primary hover:text-background transition-colors disabled:opacity-50"
-                  disabled=""
-                >
-                  <span
-                    class="material-symbols-outlined"
-                    data-icon="chevron_left"
-                    >chevron_left</span
+              <table class="w-full text-left border-collapse min-w-[900px]">
+                <thead>
+                  <tr
+                    class="bg-primary text-background font-headline uppercase text-xl border-b-4 border-primary"
                   >
-                </button>
-                <button
-                  class="bg-background border-2 border-primary p-2 hover:bg-primary hover:text-background transition-colors"
-                >
-                  <span
-                    class="material-symbols-outlined"
-                    data-icon="chevron_right"
-                    >chevron_right</span
-                  >
-                </button>
+                    <th class="p-4 whitespace-nowrap">Timestamp</th>
+                    <th class="p-4 border-l-4 border-background">
+                      Project Name
+                    </th>
+                    <th class="p-4 border-l-4 border-background">Status</th>
+                    <th class="p-4 border-l-4 border-background w-1/2">
+                      Message
+                    </th>
+                    <th class="p-4 border-l-4 border-background text-center">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="logs-body" class="font-body text-base"></tbody>
+              </table>
+              <div
+                class="bg-surface p-4 flex justify-between items-center border-t-4 border-primary font-headline uppercase font-bold"
+              >
+                <span id="logs-count">Showing 0 logs</span
+                ><span>Static MVP</span>
               </div>
             </div>
+          </section>
+        </main>
+      </div>
+      <footer
+        class="bg-primary text-background font-label uppercase text-xs tracking-tighter border-t-4 border-primary lg:ml-64 z-20 sidebar-pad"
+      >
+        <div class="w-full py-4 px-8 flex justify-between items-center">
+          <span class="font-display font-bold text-primary-fixed"
+            >© 2026 PLAYMAKER MONITORING SYSTEM</span
+          >
+          <div class="hidden md:flex space-x-6">
+            <a href="#">Privacy Policy</a><a href="#">Terminal Access</a
+            ><a href="#">Support</a>
           </div>
         </div>
-      </main>
+      </footer>
     </div>
-    <!-- Footer -->
-    <footer
-      class="w-full bg-primary dark:bg-surface-container-highest docked full-width bottom-0 border-t-4 border-primary z-20"
-    >
-      <div class="w-full py-4 px-8 flex justify-between items-center">
-        <span
-          class="text-background dark:text-on-background font-label uppercase text-xs tracking-tighter"
-          >© 2026 PLAYMAKER MONITORING SYSTEM</span
-        >
-        <div class="flex gap-6">
-          <a
-            class="text-surface-container-highest hover:text-tertiary-fixed-dim font-label uppercase text-xs tracking-tighter"
-            href="#"
-            >Privacy Policy</a
-          >
-          <a
-            class="text-surface-container-highest hover:text-tertiary-fixed-dim font-label uppercase text-xs tracking-tighter"
-            href="#"
-            >Terminal Access</a
-          >
-          <a
-            class="text-surface-container-highest hover:text-tertiary-fixed-dim font-label uppercase text-xs tracking-tighter"
-            href="#"
-            >Support</a
-          >
-        </div>
-        <span class="font-display font-bold text-primary-fixed">PLAYMAKER</span>
-      </div>
-    </footer>
+
+    <script>
+      const PLAYMAKER_PASSWORD = "pandu123";
+      const STORAGE_KEY = "playmaker_monitoring_auth_v1";
+      const projects = [
+        {
+          name: "BI-GSheet-Sync",
+          status: "RUNNING",
+          desc: "Syncs daily transaction metrics to BI reporting sheets.",
+          heartbeat: "2 mins ago",
+        },
+        {
+          name: "Task-Audit-Putaway",
+          status: "RUNNING",
+          desc: "Pulls putaway task audit data and keeps Google Sheets clean.",
+          heartbeat: "6 mins ago",
+        },
+        {
+          name: "Payment-Gateway-Hook",
+          status: "FAILED",
+          desc: "Example failed pipeline card for error modal testing.",
+          heartbeat: "4 hours ago",
+        },
+        {
+          name: "User-Archiver-Job",
+          status: "STALE",
+          desc: "Weekly cron job to archive inactive user data.",
+          heartbeat: "5 days ago",
+        },
+      ];
+      const logs = [
+        {
+          ts: "2026-06-17 14:32:01",
+          project: "BI-GSheet-Sync",
+          status: "SUCCESS",
+          message: "Data synchronization completed. 4,201 records updated.",
+        },
+        {
+          ts: "2026-06-17 14:31:45",
+          project: "Task-Audit-Putaway",
+          status: "SUCCESS",
+          message:
+            "Task audit update completed. Manual formula columns preserved.",
+        },
+        {
+          ts: "2026-06-17 14:28:11",
+          project: "Payment-Gateway-Hook",
+          status: "FAILED",
+          message:
+            "Runtime exception sample. Click detail later when backend is ready.",
+        },
+        {
+          ts: "2026-06-17 14:15:00",
+          project: "User-Archiver-Job",
+          status: "WARNING",
+          message: "Heartbeat stale. Last run exceeded configured threshold.",
+        },
+      ];
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .getElementById("login-form")
+          .addEventListener("submit", loginPlaymaker);
+        if (localStorage.getItem(STORAGE_KEY) === "1") enterApp();
+        renderDashboard();
+        renderLogs();
+      });
+
+      function loginPlaymaker(event) {
+        event.preventDefault();
+        const input = document.getElementById("magic-link").value.trim();
+        const error = document.getElementById("login-error");
+        if (input !== PLAYMAKER_PASSWORD) {
+          error.classList.remove("hidden");
+          return;
+        }
+        error.classList.add("hidden");
+        localStorage.setItem(STORAGE_KEY, "1");
+        enterApp();
+      }
+      function enterApp() {
+        document.getElementById("page-login").classList.remove("active");
+        document.getElementById("app").classList.remove("hidden");
+        document.body.classList.add("is-auth");
+        showPage("dashboard");
+      }
+      function logoutPlaymaker() {
+        localStorage.removeItem(STORAGE_KEY);
+        document.getElementById("app").classList.add("hidden");
+        document.body.classList.remove("is-auth");
+        document.getElementById("page-login").classList.add("active");
+        document.getElementById("magic-link").value = "";
+      }
+      function showPage(name) {
+        document
+          .querySelectorAll("#app .page")
+          .forEach((p) => p.classList.remove("active"));
+        document.getElementById("page-" + name).classList.add("active");
+        document.querySelectorAll(".nav-btn").forEach((b) => {
+          b.className = b.className.replace(
+            "font-black border-b-4 border-primary pb-1",
+            "text-on-surface-variant font-medium",
+          );
+        });
+        const active = document.querySelector(`[data-nav="${name}"]`);
+        if (active)
+          active.className =
+            "nav-btn font-black border-b-4 border-primary pb-1 uppercase font-headline tracking-widest text-sm";
+        document.querySelector(".side-dashboard").className =
+          "text-left side-dashboard text-primary px-4 py-3 border-b-2 border-primary flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-primary-fixed";
+        document.querySelector(".side-logs").className =
+          "text-left side-logs text-primary px-4 py-3 border-b-2 border-primary flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-primary-fixed";
+        const side = document.querySelector(".side-" + name);
+        if (side)
+          side.className =
+            "text-left side-" +
+            name +
+            " bg-primary text-background font-black px-4 py-3 flex items-center space-x-3 uppercase font-label tracking-widest text-sm border-y-2 border-primary";
+      }
+      function renderDashboard() {
+        document.getElementById("total-projects").textContent = projects.length;
+        document.getElementById("healthy-projects").textContent =
+          projects.filter((p) => p.status === "RUNNING").length;
+        document.getElementById("failed-projects").textContent =
+          projects.filter((p) => p.status === "FAILED").length;
+        document.getElementById("project-grid").innerHTML = projects
+          .map((p) => {
+            const failed = p.status === "FAILED",
+              stale = p.status === "STALE";
+            const cardBg = failed ? "bg-secondary-container" : "bg-surface";
+            const corner = failed
+              ? "bg-secondary"
+              : stale
+                ? "bg-primary-fixed-dim"
+                : "bg-primary-fixed";
+            const dot = failed
+              ? "bg-secondary"
+              : stale
+                ? "bg-primary-fixed-dim"
+                : "bg-[#00cc44] animate-pulse";
+            return `<div onclick="showPage('logs')" class="${cardBg} neo-border shadow-neo hover:shadow-neo-hover transition-shadow p-6 flex flex-col group relative overflow-hidden cursor-pointer">
+          <div class="absolute top-0 right-0 w-16 h-16 ${corner} -mr-8 -mt-8 rotate-45 border-l-4 border-b-4 border-primary"></div>
+          <div class="flex justify-between items-start mb-6 z-10"><div class="bg-background neo-border px-3 py-1 inline-flex items-center space-x-2"><div class="status-dot ${dot}"></div><span class="font-label text-xs uppercase font-bold tracking-widest ${failed ? "text-secondary" : ""}">${p.status}</span></div><span class="material-symbols-outlined text-outline-variant">more_vert</span></div>
+          <h4 class="font-headline font-black text-2xl uppercase tracking-tighter mb-2 z-10">${p.name}</h4><p class="font-body text-sm text-on-surface-variant mb-8 z-10">${p.desc}</p>
+          <div class="mt-auto border-t-2 border-primary pt-4 flex justify-between items-center z-10"><div class="flex flex-col"><span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Last Heartbeat</span><span class="font-body font-bold ${failed ? "text-secondary" : ""}">${p.heartbeat}</span></div><button class="neo-border p-2 group-hover:bg-primary group-hover:text-background transition-colors"><span class="material-symbols-outlined block text-sm">arrow_forward</span></button></div></div>`;
+          })
+          .join("");
+      }
+      function renderLogs() {
+        const search = document
+          .getElementById("log-search")
+          .value.toLowerCase();
+        const status = document
+          .getElementById("log-status")
+          .value.replace("ALL STATUS", "")
+          .toLowerCase();
+        const filtered = logs.filter(
+          (l) =>
+            (!status || l.status.toLowerCase() === status) &&
+            `${l.ts} ${l.project} ${l.status} ${l.message}`
+              .toLowerCase()
+              .includes(search),
+        );
+        document.getElementById("logs-body").innerHTML = filtered
+          .map((l) => {
+            const fail = l.status === "FAILED";
+            return `<tr class="border-b-4 border-primary ${fail ? "hover:bg-secondary hover:text-background" : "hover:bg-primary-fixed"} transition-colors group cursor-pointer"><td class="p-4 font-mono font-bold">${l.ts}</td><td class="p-4 border-l-4 border-primary font-headline uppercase font-bold">${l.project}</td><td class="p-4 border-l-4 border-primary"><span class="${fail ? "bg-secondary text-background border-background" : "bg-background text-primary border-primary"} border-2 px-2 py-1 font-headline uppercase text-xs font-bold inline-block">${l.status}</span></td><td class="p-4 border-l-4 border-primary truncate max-w-xs">${l.message}</td><td class="p-4 border-l-4 border-primary text-center"><button onclick="alert('${l.project}: ${l.message.replace(/'/g, "\\'")}')"><span class="material-symbols-outlined">open_in_new</span></button></td></tr>`;
+          })
+          .join("");
+        document.getElementById("logs-count").textContent =
+          `Showing ${filtered.length} log(s)`;
+      }
+      function exportLogsCsv() {
+        const csv = [
+          "timestamp;project_name;status;message",
+          ...logs.map((l) => `${l.ts};${l.project};${l.status};${l.message}`),
+        ].join("\n");
+        const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "playmaker_logs.csv";
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+    </script>
   </body>
 </html>
