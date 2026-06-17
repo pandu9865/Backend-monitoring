@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Playmaker Monitoring</title>
+    <title>BACKEND MONITORING</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -145,7 +145,7 @@
         >
           <div class="flex flex-col items-center text-center gap-2 mb-4">
             <h1 class="font-display font-black text-5xl tracking-tighter">
-              PLAYMAKER
+              BACKEND MONITORING
             </h1>
             <p
               class="font-headline font-bold text-sm uppercase tracking-widest text-on-surface-variant"
@@ -196,7 +196,9 @@
               <button
                 class="w-full bg-transparent text-primary brutal-border py-3 px-6 font-headline font-bold uppercase text-sm tracking-tight hover:bg-primary hover:text-background transition-colors duration-150"
                 type="button"
-                onclick="alert('Hubungi admin Playmaker untuk token akses.')"
+                onclick="
+                  alert('Hubungi admin Backend Monitoring untuk token akses.')
+                "
               >
                 Request Access
               </button>
@@ -211,8 +213,8 @@
               >shield</span
             >
             <p class="font-body text-xs text-on-surface-variant">
-              Unauthorized access to this Playmaker node is strictly prohibited.
-              Connections are monitored and logged.
+              Unauthorized access to this Backend Monitoring node is strictly
+              prohibited. Connections are monitored and logged.
             </p>
           </div>
         </div>
@@ -225,8 +227,10 @@
       <footer
         class="w-full py-4 px-8 flex justify-between items-center bg-primary border-t-[3px] border-primary absolute bottom-0 z-10 text-xs uppercase font-label tracking-tighter text-background"
       >
-        <div class="font-display font-bold text-primary-fixed">PLAYMAKER</div>
-        <div>© 2026 PLAYMAKER MONITORING SYSTEM</div>
+        <div class="font-display font-bold text-primary-fixed">
+          BACKEND MONITORING
+        </div>
+        <div>© 2026 BACKEND MONITORING SYSTEM</div>
         <div class="hidden md:flex gap-4">
           <a href="#">Privacy Policy</a><a href="#">Terminal Access</a
           ><a href="#">Support</a>
@@ -245,7 +249,7 @@
             class="text-2xl font-display font-black tracking-tighter uppercase cursor-pointer"
             onclick="showPage('dashboard')"
           >
-            PLAYMAKER
+            BACKEND MONITORING
           </div>
           <div class="hidden md:flex items-center space-x-8">
             <button
@@ -278,7 +282,7 @@
               >
             </button>
             <button
-              onclick="logoutPlaymaker()"
+              onclick="logoutBackendMonitoring()"
               class="p-2 neo-border hover:bg-secondary hover:text-background transition-colors shadow-neo active:translate-y-1 active:translate-x-1 active:shadow-none"
             >
               <span class="material-symbols-outlined block">logout</span>
@@ -331,7 +335,7 @@
               ><span>Documentation</span>
             </button>
             <button
-              onclick="logoutPlaymaker()"
+              onclick="logoutBackendMonitoring()"
               class="text-left text-primary px-4 py-3 flex items-center space-x-3 uppercase font-label tracking-widest text-sm hover:bg-secondary hover:text-on-error"
             >
               <span class="material-symbols-outlined">logout</span
@@ -352,7 +356,7 @@
                   Dashboard<br />Overview
                 </h1>
                 <p class="font-body text-xl font-medium max-w-2xl">
-                  Monitoring active Playmaker instances and backend
+                  Monitoring active backend automation instances and backend
                   synchronization pipelines.
                 </p>
               </div>
@@ -495,7 +499,7 @@
       >
         <div class="w-full py-4 px-8 flex justify-between items-center">
           <span class="font-display font-bold text-primary-fixed"
-            >© 2026 PLAYMAKER MONITORING SYSTEM</span
+            >© 2026 BACKEND MONITORING SYSTEM</span
           >
           <div class="hidden md:flex space-x-6">
             <a href="#">Privacy Policy</a><a href="#">Terminal Access</a
@@ -506,8 +510,8 @@
     </div>
 
     <script>
-      const PLAYMAKER_PASSWORD = "pandu123";
-      const STORAGE_KEY = "playmaker_monitoring_auth_v1";
+      const BACKEND_MONITORING_PASSWORD = "pandu123";
+      const STORAGE_KEY = "backend_monitoring_auth_v1";
       const projects = [
         {
           name: "BI-GSheet-Sync",
@@ -566,17 +570,17 @@
       document.addEventListener("DOMContentLoaded", () => {
         document
           .getElementById("login-form")
-          .addEventListener("submit", loginPlaymaker);
+          .addEventListener("submit", loginBackendMonitoring);
         if (localStorage.getItem(STORAGE_KEY) === "1") enterApp();
         renderDashboard();
         renderLogs();
       });
 
-      function loginPlaymaker(event) {
+      function loginBackendMonitoring(event) {
         event.preventDefault();
         const input = document.getElementById("magic-link").value.trim();
         const error = document.getElementById("login-error");
-        if (input !== PLAYMAKER_PASSWORD) {
+        if (input !== BACKEND_MONITORING_PASSWORD) {
           error.classList.remove("hidden");
           return;
         }
@@ -590,7 +594,7 @@
         document.body.classList.add("is-auth");
         showPage("dashboard");
       }
-      function logoutPlaymaker() {
+      function logoutBackendMonitoring() {
         localStorage.removeItem(STORAGE_KEY);
         document.getElementById("app").classList.add("hidden");
         document.body.classList.remove("is-auth");
@@ -685,7 +689,7 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = "playmaker_logs.csv";
+        a.download = "backend_monitoring_logs.csv";
         a.click();
         URL.revokeObjectURL(url);
       }
